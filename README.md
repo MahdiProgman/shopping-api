@@ -16,7 +16,7 @@ a structured shopping system.
     * [ ] build things like guard and access token generator
     * [ ] add google oauth system (the fantastic part🤩)
 * [ ] users 👤
-    * [ ] implement user model
+    * [x] implement user model
     * [ ] create basic endpoints like getting profile or change informations
     * [ ] create a system for verifing email for opreations like reset password and change email (wowwww!!🤩) 
     * [ ] add account linking/unlinking system (let me die)
