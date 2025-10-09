@@ -57,6 +57,17 @@ yarn start:dev
 ```
 and now this guy run on the port which is set on .env.development.local
 
+# 🧪 How to Run Tests?
+just run this on your terminal :
+```bash
+yarn test
+```
+# 📄 Documentation
+for viewing docs, go to this address :
+```bash
+http://localhost:PORT/api/docs
+```
+
 # 🫶 How to Support Me?
 I just wanted your attention, and now I got it 😎
 If you want to make me even happier, just give a ⭐!
