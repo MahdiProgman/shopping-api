@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common';
-import { USER_REPOSITORY } from './constants';
+import { SESSION_REPOSITORY, USER_REPOSITORY } from './constants';
 import { UserRepository } from './infrastructure/database/repositories/user.repository';
+import { SessionRepository } from './infrastructure/database/repositories/session.repository';
 
 @Module({
   providers: [
@@ -8,7 +9,11 @@ import { UserRepository } from './infrastructure/database/repositories/user.repo
       provide: USER_REPOSITORY,
       useClass: UserRepository,
     },
+    {
+      provide: SESSION_REPOSITORY,
+      useClass: SessionRepository,
+    },
   ],
-  exports: [USER_REPOSITORY],
+  exports: [USER_REPOSITORY, SESSION_REPOSITORY],
 })
 export class UserModule {}

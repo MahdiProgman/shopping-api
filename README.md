@@ -22,7 +22,7 @@ a structured shopping system.
     * [ ] add account linking/unlinking system (let me die)
     * [ ] allow user to see and terminate sessions
 * [ ] 💻 sessions
-    * [ ] implement session model
+    * [x] implement session model
     * [ ] implement features like getting sessions and terminating
 
 ### planning in future
