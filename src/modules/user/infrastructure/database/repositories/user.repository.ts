@@ -3,7 +3,9 @@ import { User } from 'src/modules/user/domain/entities/user.entity';
 import { UserRepository as IUserRepository } from 'src/modules/user/domain/repositories/user.repository';
 import { EmailAddress } from 'src/modules/user/domain/value-objects/email-address.value-object';
 import { UserMapper } from '../mappers/user.mapper';
+import { Injectable } from '@nestjs/common';
 
+@Injectable()
 export class UserRepository implements IUserRepository {
   constructor(public readonly prismaService: PrismaService) {}
 
