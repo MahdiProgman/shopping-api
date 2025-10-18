@@ -24,6 +24,11 @@ a structured shopping system.
 * [ ] 💻 sessions
     * [x] implement session model
     * [ ] implement features like getting sessions and terminating
+* [ ] 🛍 implement other models
+    * [ ] implement product, product_comment, favorites, cart, orders and their domain layer
+    * [ ] implement role system and permission model and their domain layer
+    * [ ] implement ticket model and their domain layer
+    * [ ] 📊 implement statistics models and their domain layer
 
 ### planning in future
 
