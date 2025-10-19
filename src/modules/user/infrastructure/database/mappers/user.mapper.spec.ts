@@ -1,5 +1,8 @@
 import { User as UserPersistenceEntity } from '@prisma/client';
-import { User as UserDomainEntity } from 'src/modules/user/domain/entities/user.entity';
+import {
+  User as UserDomainEntity,
+  UserRole,
+} from 'src/modules/user/domain/entities/user.entity';
 import { UserMapper } from './user.mapper';
 
 const userDomainEntity: UserDomainEntity = new UserDomainEntity({
@@ -11,6 +14,7 @@ const userDomainEntity: UserDomainEntity = new UserDomainEntity({
 
 const userPersistenceEntity: UserPersistenceEntity = {
   id: 'abcd-efgh-ijkl-mnop',
+  role: UserRole.Admin,
   email: 'mahdi-persistence@gmail.com',
   first_name: 'Mahdi',
   last_name: 'Habib Khah',

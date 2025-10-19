@@ -1,5 +1,5 @@
 import { PrismaService } from 'src/core/prisma/prisma.service';
-import { User } from 'src/modules/user/domain/entities/user.entity';
+import { User, UserRole } from 'src/modules/user/domain/entities/user.entity';
 import { EmailAddress } from 'src/modules/user/domain/value-objects/email-address.value-object';
 import { UserRepository } from './user.repository';
 
@@ -41,6 +41,7 @@ describe('UserRepository', () => {
 
       (prisma.user.create as jest.Mock).mockResolvedValue({
         id: 'abcd-efgh-ijkl-mnop',
+        role: UserRole.User,
         email: newUser.email.value,
         first_name: newUser.first_name,
         last_name: newUser.last_name,
@@ -69,6 +70,7 @@ describe('UserRepository', () => {
 
       (prisma.user.findUnique as jest.Mock).mockResolvedValue({
         id: user.id,
+        role: user.role,
         email: user.email.value,
         first_name: user.first_name,
         last_name: user.last_name,
@@ -105,6 +107,7 @@ describe('UserRepository', () => {
 
       (prisma.user.findUnique as jest.Mock).mockResolvedValue({
         id: user.id,
+        role: user.role,
         email: user.email.value,
         first_name: user.first_name,
         last_name: user.last_name,

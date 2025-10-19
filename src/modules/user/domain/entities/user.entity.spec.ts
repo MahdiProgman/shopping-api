@@ -1,4 +1,4 @@
-import { User } from './user.entity';
+import { User, UserRole } from './user.entity';
 
 describe('UserEntity', () => {
   describe('constructor', () => {
@@ -11,6 +11,21 @@ describe('UserEntity', () => {
       });
 
       expect(user).toBeInstanceOf(User);
+    });
+  });
+
+  describe('changeRole', () => {
+    it('should be change role successfully', () => {
+      const user = new User({
+        email: 'mahdi@gmail.com',
+        first_name: 'Mahdi',
+        last_name: 'HabibKhah',
+        password_hash: 'my_hashed_password',
+      });
+
+      user.changeRole(UserRole.Owner);
+
+      expect(user.role).toBe(UserRole.Owner);
     });
   });
 

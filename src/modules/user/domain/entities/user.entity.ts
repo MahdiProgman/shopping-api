@@ -1,7 +1,14 @@
 import { EmailAddress } from '../value-objects/email-address.value-object';
 
+export enum UserRole {
+  User = 'USER',
+  Admin = 'ADMIN',
+  Owner = 'OWNER',
+}
+
 interface UserProps {
   id?: string;
+  role?: UserRole;
   email: string;
   first_name: string;
   last_name: string;
@@ -12,6 +19,7 @@ interface UserProps {
 
 export class User {
   public readonly id?: string;
+  private _role: UserRole;
   private _email: EmailAddress;
   public first_name: string;
   public last_name: string;
@@ -21,6 +29,7 @@ export class User {
 
   constructor(props: UserProps) {
     this.id = props.id;
+    this._role = props.role ?? UserRole.User;
     this._email = new EmailAddress(props.email);
     this.first_name = props.first_name;
     this.last_name = props.last_name;
@@ -29,12 +38,20 @@ export class User {
     this.updated_at = props.updated_at;
   }
 
+  get role() {
+    return this._role;
+  }
+
   get email() {
     return this._email;
   }
 
   get password_hash() {
     return this._password_hash;
+  }
+
+  public changeRole(role: UserRole) {
+    this._role = role;
   }
 
   public changeEmail(email: string) {
