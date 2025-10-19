@@ -26,7 +26,7 @@ a structured shopping system.
     * [ ] implement features like getting sessions and terminating
 * [ ] 🛍 implement other models
     * [ ] implement product, product_comment, favorites, cart, orders and their domain layer
-    * [ ] implement role system and permission model and their domain layer
+    * [x] add role field to user model and create permission model with it's domain layer
     * [ ] implement ticket model and their domain layer
     * [ ] 📊 implement statistics models and their domain layer
 
